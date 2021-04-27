@@ -1,0 +1,38 @@
+#!/bin/bash
+# Bash Menu Script Example
+
+echo "    Assignment: Shell Programming
+    Class ID: 20IT1
+    Student ID: 20IT009
+    Student Name:Hoàng Lê Tuấn Kiệt
+    ";
+
+PS3='Please enter your choice: '
+options=("Display the present working directory" "List names of the files in a given directory"
+ "Display today's date and time" "Display whether a file is a ordinary file or a directory" 
+ "Execute a command line" "Exit the program")
+
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Display the present working directory")
+            pwd
+            ;;
+        "List names of the files in a given directory")
+            ls /home/tuankiet/Desktop/Test
+            ;;
+        "Display today's date and time")
+            date
+            ;;
+        "Display whether a file is a ordinary file or a directory")
+            ls
+            ;;
+        "Execute a command line")
+            echo "by Hoàng Kiệt"
+            ;;
+        "Exit the program")
+            break
+            ;;
+        *) echo "Nhap Lai";;
+    esac
+done
